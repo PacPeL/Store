@@ -1,4 +1,4 @@
-import "./headerSearch.scss";
+import "./_headerSearch.scss";
 
 export default function HeaderSearch({
   isOpen,
