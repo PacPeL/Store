@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
-function App() {
-  const [count, setCount] = useState(0)
+const Placeholder = ({ title }) => (
+  <div style={{ padding: 40 }}>
+    <h1>{title}</h1>
+  </div>
+);
 
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/cart" element={<Placeholder title="Cart" />} />
+      <Route path="/profile" element={<Placeholder title="Profile" />} />
+      <Route path="/search" element={<Placeholder title="Search" />} />
+      <Route path="/menu" element={<Placeholder title="Menu" />} />
+      <Route path="/product/:id" element={<Placeholder title="Product details" />} />
+      <Route path="/wishlist" element={<Placeholder title="Wishlist" />} />
+      <Route path="/orders" element={<Placeholder title="Orders" />} />
+      <Route path="/support" element={<Placeholder title="Support" />} />
+      <Route path="/settings" element={<Placeholder title="Settings" />} />
+      <Route path="/category/:slug" element={<Placeholder title="Category" />} />
+    </Routes>
+  );
 }
-
-export default App
